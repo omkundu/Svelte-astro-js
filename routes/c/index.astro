@@ -1,0 +1,15 @@
+
+import { loadTranslations } from '../../loadTranslations.js';
+const { lang } = Astro.request.query;
+const translations = await loadTranslations(lang, '/routes/a/b/c');
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <title>{translations.title}</title>
+</head>
+<body>
+  <h1>{translations.title}</h1>
+  <p>{translations.description}</p>
+</body>
+</html>
